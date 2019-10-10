@@ -6,23 +6,29 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var dice_image : ImageView /*l'attributo lateinit indica a kotlin che stiamo dichiarando una variabile
+                                          che inizializzeremo prima di lanciare il programma, senza quest'attributo
+                                          kotlin da errore, in quanto non accetta variabili non inizializzate, o
+                                          dovremmo inizializzarla a null*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        roll_button.text = "Let's roll"
         val rollButton : Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener {
             rollDice()
-
+        dice_image = findViewById(R.id.dice_image)
         }
         
     }
     private fun rollDice(){
-        val dice_image : ImageView = findViewById(R.id.dice_image)
-
+        
         val randomInt = Random.nextInt(6) + 1
 
         val drawable = when(randomInt){
