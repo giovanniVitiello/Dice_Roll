@@ -13,20 +13,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dice_image"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/roll_button"
+            app:layout_constraintRight_toLeftOf="@id/dice_image_2"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@drawable/empty_dice"/>
+            app:layout_constraintBottom_toBottomOf="@id/roll_button"
+            android:background="@drawable/empty_dice"
+            tools:background="@drawable/dice_1"/><!--serve per vedere nell anteprima l'immagine
+                                                 del dado con la faccia 1, anche se quando parte
+                                                 l'app parte con empty dice-->
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dice_image_2"
+            app:layout_constraintBottom_toBottomOf="@id/roll_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/dice_image"
+            android:background="@drawable/empty_dice"
+            tools:background="@drawable/dice_1"/>
+
 
     <Button
             android:text="@string/roll"
             android:id="@+id/roll_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" tools:layout_editor_absoluteY="262dp"
+            android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+            android:text="@string/delete"
+            android:id="@+id/delete_dice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roll_button"/>
 
 </android.support.constraint.ConstraintLayout>
