@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
                                           dovremmo inizializzarla a null*/
     lateinit var dice_image_2 : ImageView
 
-    lateinit var delete_image : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +35,18 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             RollDice()
         }
+
+        val result_1 : TextView = findViewById(R.id.result_1)
+        val result_2 : TextView = findViewById(R.id.result_2)
+        val result_3 : TextView = findViewById(R.id.result_3)
+        val result_4 : TextView = findViewById(R.id.result_4)
+        val result_5 : TextView = findViewById(R.id.result_5)
+        val result_6 : TextView = findViewById(R.id.result_6)
+        val roll_100 : Button = findViewById(R.id.roll_100)
+        roll_100.setOnClickListener {
+            result_1.text = RollDice_100()
+        }
+
         dice_image = findViewById(R.id.dice_image)/*findViwById collega un elemento dal xml ad una variabile
                                                     del codice kotlin*/
         dice_image_2 = findViewById(R.id.dice_image_2)
@@ -73,11 +84,24 @@ class MainActivity : AppCompatActivity() {
     /*------------ two dice roll -------------*/
 
     private fun RollDice(){
-        dice_image.setImageResource(getDiceImage())/*setImageResource si usa per modificare un immagine ed assegnarla
+            dice_image.setImageResource(getDiceImage())/*setImageResource si usa per modificare un immagine ed assegnarla
                                                     ad una variabile (dice_image) di tipo ImageView. E' possibile
                                                     fare riferime ad immagini specifiche già caricate sotto la cartella
                                                     res -> drawable utilizzando il comando R.drawable.<nome_image>*/
-        dice_image_2.setImageResource(getDiceImage())
+            dice_image_2.setImageResource(getDiceImage())
+
+    }
+
+    private fun RollDice_100(): String{
+        var n: Int =0
+        for(i in 0..100){
+            var result = Random.nextInt(6) + 1
+
+            if (result == 1){
+                n++
+            }
+        }
+        return n.toString()
     }
 
     private fun getDiceImage() : Int{

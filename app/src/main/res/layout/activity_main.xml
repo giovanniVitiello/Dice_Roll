@@ -10,25 +10,29 @@
         tools:context=".MainActivity">
 
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
             android:id="@+id/dice_image"
             app:layout_constraintRight_toLeftOf="@id/dice_image_2"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/roll_button"
+            app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/empty_dice"
+            android:contentDescription="@string/dice_1"
             tools:background="@drawable/dice_1"/><!--serve per vedere nell anteprima l'immagine
                                                  del dado con la faccia 1, anche se quando parte
                                                  l'app parte con empty dice-->
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
             android:id="@+id/dice_image_2"
             app:layout_constraintBottom_toBottomOf="@id/roll_button"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toRightOf="@id/dice_image"
+            app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/empty_dice"
-            tools:background="@drawable/dice_1"/>
+            tools:background="@drawable/dice_1"
+            android:contentDescription="@string/dice_2"/>
 
 
     <Button
@@ -37,9 +41,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/dice_image"/>
+    <Button
+            android:text="@string/roll_100"
+            android:id="@+id/roll_100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roll_button"/>
 
     <Button
             android:text="@string/delete"
@@ -48,6 +59,106 @@
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/roll_button"/>
+            app:layout_constraintTop_toBottomOf="@id/three_face"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            android:id="@+id/star_image"
+            app:layout_constraintBottom_toTopOf="@id/dice_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:contentDescription="@string/yellow_star"/>
+    <Button
+            android:text="@string/one"
+            android:id="@+id/one_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roll_100"/>
+    <Button
+            android:text="@string/two"
+            android:id="@+id/two_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/one_face"/>
+    <Button
+            android:text="@string/three"
+            android:id="@+id/three_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/two_face"/>
+    <Button
+            android:text="@string/four"
+            android:id="@+id/four_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roll_100"/>
+    <Button
+            android:text="@string/five"
+            android:id="@+id/five_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/one_face"/>
+    <Button
+            android:text="@string/six"
+            android:id="@+id/six_face"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/two_face"/>
+    <TextView
+            android:text="@string/result_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/one_face"
+            app:layout_constraintTop_toBottomOf="@id/roll_100"
+            android:textSize="20sp"
+            android:id="@+id/result_1"/>
+    <TextView
+            android:text="@string/result_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/one_face"
+            app:layout_constraintTop_toBottomOf="@id/one_face"
+            android:textSize="20sp"
+            android:id="@+id/result_2"/>
+    <TextView
+            android:text="@string/result_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/one_face"
+            app:layout_constraintTop_toBottomOf="@id/two_face"
+            android:textSize="20sp"
+            android:id="@+id/result_3"/>
+    <TextView
+            android:text="@string/result_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/four_face"
+            app:layout_constraintTop_toBottomOf="@id/roll_100"
+            android:textSize="20sp"
+            android:id="@+id/result_4"/>
+    <TextView
+            android:text="@string/result_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/five_face"
+            app:layout_constraintTop_toBottomOf="@id/roll_100"
+            android:textSize="20sp"
+            android:id="@+id/result_5"/>
+    <TextView
+            android:text="@string/result_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/six_face"
+            app:layout_constraintTop_toBottomOf="@id/roll_100"
+            android:textSize="20sp"
+            android:id="@+id/result_6"/>
+
 
 </android.support.constraint.ConstraintLayout>
