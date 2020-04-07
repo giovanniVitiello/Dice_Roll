@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">Dice_Roller</string>
-    <string name="_1">1</string>
     <string name="roll">Roll</string>
+    <string name="delete">Delete</string>
+    <string name="yellow_star">Yellow star</string>
+    <string name="dice_1">Dice 1</string>
+    <string name="dice_2">Dice 2</string>
+    <string name="one">One</string>
+    <string name="two">Two</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="five">Five</string>
+    <string name="six">Six</string>
+    <string name="result_1">Result</string>
+    <string name="roll_100">Roll_100</string>
+    <string name="result_2">Result 2</string>
+    <string name="result_3">Result 3</string>
+    <string name="result_4">Result 4</string>
+    <string name="result_5">Result 5</string>
+    <string name="result_6">Result 6</string>
 </resources>
